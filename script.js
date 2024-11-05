@@ -69,17 +69,16 @@ function moveCircles() {
 function downloadPDF() {
     const card = document.getElementById("contactCard");
 
-    // Acessando jsPDF do módulo corretamente
-    const { jsPDF } = window.jspdf;
-
     // Usando html2canvas para capturar apenas o cartão sem fundo
     html2canvas(card, { 
         backgroundColor: null, // Remove o fundo branco
         scale: 2 // Aumenta a resolução da captura
     }).then(canvas => {
         const imgData = canvas.toDataURL("image/png");
+
         // Criar um elemento de link
         const link = document.createElement("a");
+
         link.href = imgData;
         link.download = "cartao_de_contato.png";
 
@@ -88,31 +87,6 @@ function downloadPDF() {
 
         // Remove o link temporário
         link.remove();
-
-        // Definindo o tamanho do PDF em formato retrato (A4)
-        const pdfWidth = 595.28; // A4 width in pixels
-        const pdfHeight = 841.89; // A4 height in pixels
-        
-        // Ajustar a imagem para caber na página A4
-        // const pdfHeight = (canvas.height * pdfWidth) / canvas.width; // Mantém a proporção
-        
-        // Criando um novo documento PDF em formato retrato
-        const pdf = new jsPDF({
-            // orientation: 'portrait', // Orientação retrato
-            unit: 'px', // Usar pontos como unidade
-            format: [pdfWidth, pdfHeight]
-            // format: [pdfHeight, pdfWidth/2]
-        });
-        const imgHeight = (canvas.height * pdfWidth) / canvas.width; // Mantém a proporção
-
-        // Ajustar a imagem para caber na página A4
-        // const imgHeight = pdfHeight
-
-        // Adiciona a imagem ao PDF
-        pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, imgHeight);
-        
-        // Salva o PDF
-        pdf.save("cartao_de_contato.pdf");
 
         // Adiciona a animação ao botão
         downloadBtn.classList.add('animate');
