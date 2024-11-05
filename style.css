@@ -1,5 +1,11 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 body {
     font-family: Arial, sans-serif;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,9 +15,11 @@ body {
     background-color: #f0f0f0;
 }
 
+
 .card {
     position: relative;
-    width: 320px;
+    width: 80%;
+    height: 50%;
     border-radius: 10px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
     overflow: hidden;
@@ -21,16 +29,48 @@ body {
     z-index: 1;
 }
 
-.card-background {
+/* Círculos animados */
+.circle {
     position: absolute;
-    top: -30px;
-    left: -30px;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, #0073e6 40%, #005bb5 90%);
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0, 115, 230, 0.3);
     border-radius: 50%;
-    opacity: 0.1;
-    z-index: -1;
+    animation: ping 3s ease-in-out infinite;
+}
+
+.circle.top-left {
+    top: -20px;
+    left: -20px;
+}
+
+.circle.top-right {
+    top: -20px;
+    right: -20px;
+    animation-delay: 0.5s;
+}
+
+.circle.bottom-left {
+    bottom: -20px;
+    left: -20px;
+    animation-delay: 1s;
+}
+
+.circle.bottom-right {
+    bottom: -20px;
+    right: -20px;
+    animation-delay: 1.5s;
+}
+
+@keyframes ping {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.2;
+    }
 }
 
 .card-header {
