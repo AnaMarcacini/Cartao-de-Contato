@@ -168,3 +168,48 @@ button:hover {
 .qr-code-btn:active {
     transform: scale(0.9); /* Encolhe o botão ao clicar */
 }
+/* -------------------------------------------------------- */
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed; /* Fixa na tela */
+    z-index: 1000; /* Fica acima dos outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Largura total da tela */
+    height: 100%; /* Altura total da tela */
+    overflow: auto; /* Habilita rolagem se necessário */
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo preto semi-transparente */
+}
+
+.modal-content {
+    position: relative;
+    margin: 10% auto; /* Menor margem superior para que fique mais próximo do topo */
+    padding: 20px;
+    width: 90%; /* Aumenta a largura do modal para 90% da tela */
+    max-width: 700px; /* Aumenta a largura máxima para 700px */
+    max-height: 80%; /* Define uma altura máxima de 80% da tela */
+    overflow: auto; /* Adiciona rolagem se o conteúdo exceder a altura */
+    background-color: #fff; /* Fundo branco */
+    border-radius: 10px; /* Bordas arredondadas */
+    text-align: center; /* Centraliza o texto */
+}
+
+.close {
+    color: #aaa; /* Cor do 'x' de fechar */
+    float: right; /* Posiciona no canto direito */
+    font-size: 28px; /* Tamanho do 'x' */
+    font-weight: bold; /* Negrito */
+    cursor: pointer; /* Muda o cursor ao passar */
+}
+
+.close:hover,
+.close:focus {
+    color: black; /* Cor ao passar o mouse */
+    text-decoration: none; /* Remove o sublinhado */
+    cursor: pointer; /* Muda o cursor ao passar */
+}
+
+img {
+    max-width: 100%; /* Largura máxima da imagem */
+    height: auto; /* Altura automática para manter a proporção */
+}

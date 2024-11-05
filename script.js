@@ -99,10 +99,34 @@ function downloadPDF() {
 }
 
 
+// function openQRCode() {
+//     const qrCodeUrl = "http://anamarcacini.com/cartao";
+//     window.open(qrCodeUrl, '_blank'); // Abre em uma nova aba
+// }
+
 function openQRCode() {
-    const qrCodeUrl = "http://anamarcacini.com/cartao";
-    window.open(qrCodeUrl, '_blank'); // Abre em uma nova aba
+    const qrCodeUrl = 'qrcode.png';
+    const qrCodeImage = document.getElementById("qrCodeImage");
+    qrCodeImage.src = qrCodeUrl; // Define a URL do QR Code na imagem
+    document.getElementById("qrCodeModal").style.display = "block"; // Exibe o modal
 }
+
+// Função para fechar o modal
+function closeQRCode() {
+    document.getElementById("qrCodeModal").style.display = "none"; // Esconde o modal
+}
+
+// Fecha o modal quando o usuário clica fora do conteúdo do modal
+window.onclick = function(event) {
+    const modal = document.getElementById("qrCodeModal");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+};
+
+
+
+
 
 // Iniciar a criação dos círculos
 createCircles();
