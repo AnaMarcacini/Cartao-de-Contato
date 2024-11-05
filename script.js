@@ -1,6 +1,9 @@
 function downloadPDF() {
     const card = document.getElementById("contactCard");
 
+    // Acessando jsPDF do módulo corretamente
+    const { jsPDF } = window.jspdf;
+
     html2canvas(card).then(canvas => {
         const imgData = canvas.toDataURL("image/png");
         const pdf = new jsPDF({
