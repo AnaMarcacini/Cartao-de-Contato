@@ -142,3 +142,29 @@ button:hover {
 /* ---------------------- */
 
 
+.qr-code-btn {
+    position: absolute;
+    bottom: 20px; /* Distância do fundo */
+    left: 20px; /* Distância da esquerda */
+    width: 60px; /* Largura do botão */
+    height: 60px; /* Altura do botão */
+    background-color: #0073e6; /* Cor de fundo do botão */
+    color: white; /* Cor do ícone */
+    border: none; /* Remove a borda padrão */
+    border-radius: 50%; /* Torna o botão circular */
+    cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+    font-size: 24px; /* Tamanho do ícone */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Animação de cor e transformação */
+    display: flex; /* Para centralizar o ícone */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para o botão */
+}
+
+.qr-code-btn:hover {
+    background-color: #005bb5; /* Cor ao passar o mouse */
+}
+
+.qr-code-btn:active {
+    transform: scale(0.9); /* Encolhe o botão ao clicar */
+}

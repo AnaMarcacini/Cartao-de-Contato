@@ -99,7 +99,10 @@ function downloadPDF() {
 }
 
 
-
+function openQRCode() {
+    const qrCodeUrl = "http://anamarcacini.com/cartao";
+    window.open(qrCodeUrl, '_blank'); // Abre em uma nova aba
+}
 
 // Iniciar a criação dos círculos
 createCircles();
