@@ -9,16 +9,41 @@
 <body>
     <div class="card" id="contactCard">
         <div class="card-header">
-            <h1>Seu Nome</h1>
-            <p>Seu Cargo</p>
+            <h1>Ana Marcacini</h1>
+            <p>Pesquisadora da Divisão de Eletrônica e Telecomunicações
+                <br>Estudante de Engenharia da Computação
+            </p>
         </div>
         <div class="card-body" id="contactInformation">
-            <p>(XX) XXXX-XXXX</p>
-            <p>seuemail@exemplo.com</p>
-            <p>Cidade, País</p>
+            <p>
+                <i class="fas fa-phone"></i>
+                <a href="https://api.whatsapp.com/send?phone=+5511987507002&text=Ol%C3%A1%20Ana%2C%20recebi%20o%20seu%20curr%C3%ADculo%20e%20gostaria%20de%20te%20conhecer%20melhor%2C%20podemos%20conversar%3F">(11) 98750-7002</a>
+            </p>
+            <p>
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:ana.marcacini2000@gmail.com">ana.marcacini2000@gmail.com</a>
+            </p>
+            <p>
+                <i class="fab fa-linkedin"></i>
+                <a href="http://www.linkedin.com/in/ana-helena" target="_blank">Ana Helena Marcacini</a>
+            </p>
+            <p>
+                <i class="fab fa-github"></i>
+                <a href="https://github.com/AnaMarcacini" target="_blank">Ana Marcacini</a>
+            </p>
+            <p>
+                <i class="fas fa-map-marker-alt"></i>
+                <a href="https://www.google.com/maps?q=São+Paulo,+Brasil" target="_blank">São Paulo, Brasil</a>
+            </p>
         </div>
     </div>
+    
+    <button onclick="downloadPDF()">Baixar PDF</button>
 
+    <!-- Bibliotecas de ícones e PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

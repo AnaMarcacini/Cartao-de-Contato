@@ -1,7 +1,7 @@
 // const card = document.getElementById('contactInformation');
 const card = document.getElementById('contactCard');
 const circles = [];
-const numberOfCircles = 5; // Número de círculos
+const numberOfCircles = 15; // Número de círculos
 const speed = 0.5; // Velocidade de movimento
 // Função para criar círculos
 function createCircles() {
@@ -61,6 +61,44 @@ function moveCircles() {
 
     requestAnimationFrame(moveCircles); // Chama a função novamente para continuar o movimento
 }
+function downloadPDF() {
+    const card = document.getElementById("contactCard");
 
+    // Acessando jsPDF do módulo corretamente
+    const { jsPDF } = window.jspdf;
+
+    html2canvas(card, { scale: 2 }).then(canvas => { // Usando scale para aumentar a resolução
+        const imgData = canvas.toDataURL("image/png");
+        
+        // Definindo o tamanho do PDF como A4 em pixels
+        const pdfWidth = 595.28; // A4 width in pixels
+        const pdfHeight = 841.89; // A4 height in pixels
+        
+        // Criando um novo documento PDF
+        const pdf = new jsPDF({
+            orientation: 'portrait',
+            unit: 'pt', // Usar pontos como unidade
+            format: [pdfWidth, pdfHeight]
+        });
+
+        // Ajustar a imagem para caber na página A4
+        const imgWidth = pdfWidth;
+        const imgHeight = (canvas.height * imgWidth) / canvas.width; // Mantém a proporção
+
+        // Adiciona a imagem ao PDF
+        pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+        
+        // Salva o PDF
+        pdf.save("cartao_de_contato.pdf");
+    });
+}
+
+
+
+
+/////
+
+
+////
 // Iniciar a criação dos círculos
 createCircles();
