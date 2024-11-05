@@ -110,3 +110,32 @@ button {
 button:hover {
     background-color: #005bb5;
 }
+
+
+
+.download-btn {
+    position: absolute;
+    bottom: 20px; /* Ajuste conforme necessário */
+    right: 20px; /* Ajuste conforme necessário */
+    width: 60px; /* Largura do botão */
+    height: 60px; /* Altura do botão */
+    background-color: #0073e6; /* Cor de fundo do botão */
+    color: white; /* Cor do ícone */
+    border: none; /* Remove a borda padrão */
+    border-radius: 50%; /* Torna o botão circular */
+    cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+    font-size: 24px; /* Tamanho do ícone */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Animação de cor e transformação */
+    display: flex; /* Para centralizar o ícone */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para o botão */
+}
+
+.download-btn:hover {
+    background-color: #005bb5; /* Cor ao passar o mouse */
+}
+
+.download-btn:active {
+    transform: scale(0.9); /* Encolhe o botão ao clicar */
+}
