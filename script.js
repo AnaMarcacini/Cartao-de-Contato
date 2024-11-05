@@ -78,7 +78,17 @@ function downloadPDF() {
         scale: 2 // Aumenta a resolução da captura
     }).then(canvas => {
         const imgData = canvas.toDataURL("image/png");
-        
+        // Criar um elemento de link
+        const link = document.createElement("a");
+        link.href = imgData;
+        link.download = "cartao_de_contato.png";
+
+        // Dispara o download
+        link.click();
+
+        // Remove o link temporário
+        link.remove();
+
         // Definindo o tamanho do PDF em formato retrato (A4)
         const pdfWidth = 595.28; // A4 width in pixels
         const pdfHeight = 841.89; // A4 height in pixels
@@ -88,9 +98,10 @@ function downloadPDF() {
         
         // Criando um novo documento PDF em formato retrato
         const pdf = new jsPDF({
-            orientation: 'portrait', // Orientação retrato
-            unit: 'pt', // Usar pontos como unidade
+            // orientation: 'portrait', // Orientação retrato
+            unit: 'px', // Usar pontos como unidade
             format: [pdfWidth, pdfHeight]
+            // format: [pdfHeight, pdfWidth/2]
         });
         const imgHeight = (canvas.height * pdfWidth) / canvas.width; // Mantém a proporção
 
@@ -116,10 +127,5 @@ function downloadPDF() {
 
 
 
-
-/////
-
-
-////
 // Iniciar a criação dos círculos
 createCircles();
