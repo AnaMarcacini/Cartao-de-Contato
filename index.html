@@ -3,23 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cartão de Contato</title>
+    <title>Cartão de Contato Animado</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="card" id="contactCard">
         <div class="card-header">
-            <h1>Seu Nome</h1>
-            <p>Seu Cargo</p>
+            <h1>Ana Marcacini</h1>
+            <p>Pesquisadora da Divisão de Eletrônica e Telecomunicações
+                <br>Estudante de Engenharia da Computação
+            </p>
         </div>
-        <div class="card-body">
-            <p><i class="fas fa-phone"></i> Telefone: (XX) XXXX-XXXX</p>
-            <p><i class="fas fa-envelope"></i> Email: seuemail@exemplo.com</p>
-            <p><i class="fas fa-map-marker-alt"></i> Localização: Cidade, País</p>
+        <div class="card-body" id="contactInformation">
+            <p>
+                <i class="fas fa-phone"></i>
+                <a href="https://api.whatsapp.com/send?phone=+5511987507002&text=Ol%C3%A1%20Ana%2C%20recebi%20o%20seu%20curr%C3%ADculo%20e%20gostaria%20de%20te%20conhecer%20melhor%2C%20podemos%20conversar%3F">(11) 98750-7002</a>
+            </p>
+            <p>
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:ana.marcacini2000@gmail.com">ana.marcacini2000@gmail.com</a>
+            </p>
+            <p>
+                <i class="fab fa-linkedin"></i>
+                <a href="http://www.linkedin.com/in/ana-helena" target="_blank">Ana Helena Marcacini</a>
+            </p>
+            <p>
+                <i class="fab fa-github"></i>
+                <a href="https://github.com/AnaMarcacini" target="_blank">Ana Marcacini</a>
+            </p>
+            <p>
+                <i class="fas fa-map-marker-alt"></i>
+                <a href="https://www.google.com/maps?q=São+Paulo,+Brasil" target="_blank">São Paulo, Brasil</a>
+            </p>
         </div>
     </div>
-    <button onclick="downloadPDF()">Baixar PDF</button>
+    
 
+    <button id="downloadBtn" class="download-btn" onclick="downloadPDF()">
+        <i class="fas fa-download"></i>
+    </button>
+
+    <button id="qrCodeBtn" class="qr-code-btn" onclick="openQRCode()">
+        <i class="fas fa-qrcode"></i>
+    </button>
+    <div id="qrCodeModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeQRCode()">&times;</span>
+            <img id="qrCodeImage" src="" alt="QR Code" />
+        </div>
+    </div>
+    
     <!-- Bibliotecas de ícones e PDF -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>

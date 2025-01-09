@@ -1,57 +1,71 @@
-body {
-    font-family: Arial, sans-serif;
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
     background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    margin: 0;
+    font-size: 400%; 
+}
+p {
+    font-size: 150%; 
+    
+}
+a{
+    color: #333333;   
+}
+
+.card-body p {
+    text-shadow:  /* Contorno branco */
+    -1px -1px 0 #ffffff,  
+    1px -1px 0 #ffffff,
+    -1px 1px 0 #ffffff,
+    1px 1px 0 #ffffff;
+
+    font-size: 130%; 
 }
 
 .card {
-    width: 320px;
+    position: relative;
+    width: 50%;
+    padding: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
     overflow: hidden;
     background-color: #ffffff;
-    font-family: 'Arial', sans-serif;
     text-align: center;
+    z-index: 1;
 }
 
+/* Círculos */
+.circle {
+    position: absolute;
+    background-color: rgba(0, 115, 230, 0.3);
+    border-radius: 50%;
+    transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+    z-index: -1; /* colocar as bolinhas atrás dos outros elementos */
+
+}
+
+/* Estilo do cabeçalho do cartão */
 .card-header {
-    background-color: #0073e6;
-    color: white;
     padding: 20px;
+    background: linear-gradient(135deg, #0073e6, #005bb5);
+    color: white;
+    border-radius: 10px 10px 0 0;
 }
 
-.card-header h1 {
-    font-size: 1.5em;
-    margin: 0;
-}
-
-.card-header p {
-    font-size: 1em;
-    margin: 5px 0 0 0;
-    color: #cce0ff;
-}
 
 .card-body {
     padding: 20px;
     color: #333333;
-}
-
-.card-body p {
-    font-size: 1em;
-    margin: 10px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.card-body i {
-    margin-right: 8px;
-    color: #0073e6;
 }
 
 button {
@@ -62,10 +76,140 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
     transition: background-color 0.3s ease;
 }
 
 button:hover {
     background-color: #005bb5;
+}
+
+
+
+@media (max-width: 700px) {
+    .card {
+        width: auto;
+        padding: 10px; 
+    }
+}
+
+
+button {
+    padding: 12px 24px;
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute; /* Torna o botão posicionado de forma absoluta */
+    bottom: 20px; /* Distância do fundo */
+    right: 20px; /* Distância da direita */
+    z-index: 2; /* Para garantir que o botão fique acima dos círculos */
+}
+
+button:hover {
+    background-color: #005bb5;
+}
+
+
+
+.download-btn {
+    position: absolute;
+    bottom: 20px; /* Ajuste conforme necessário */
+    right: 20px; /* Ajuste conforme necessário */
+    width: 60px; /* Largura do botão */
+    height: 60px; /* Altura do botão */
+    background-color: #0073e6; /* Cor de fundo do botão */
+    color: white; /* Cor do ícone */
+    border: none; /* Remove a borda padrão */
+    border-radius: 50%; /* Torna o botão circular */
+    cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+    font-size: 24px; /* Tamanho do ícone */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Animação de cor e transformação */
+    display: flex; /* Para centralizar o ícone */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para o botão */
+}
+
+.download-btn:hover {
+    background-color: #005bb5; /* Cor ao passar o mouse */
+}
+
+.download-btn:active {
+    transform: scale(0.9); /* Encolhe o botão ao clicar */
+}
+/* ---------------------- */
+
+
+.qr-code-btn {
+    position: absolute;
+    bottom: 20px; /* Distância do fundo */
+    left: 20px; /* Distância da esquerda */
+    width: 60px; /* Largura do botão */
+    height: 60px; /* Altura do botão */
+    background-color: #0073e6; /* Cor de fundo do botão */
+    color: white; /* Cor do ícone */
+    border: none; /* Remove a borda padrão */
+    border-radius: 50%; /* Torna o botão circular */
+    cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+    font-size: 24px; /* Tamanho do ícone */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Animação de cor e transformação */
+    display: flex; /* Para centralizar o ícone */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para o botão */
+}
+
+.qr-code-btn:hover {
+    background-color: #005bb5; /* Cor ao passar o mouse */
+}
+
+.qr-code-btn:active {
+    transform: scale(0.9); /* Encolhe o botão ao clicar */
+}
+/* -------------------------------------------------------- */
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed; /* Fixa na tela */
+    z-index: 1000; /* Fica acima dos outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Largura total da tela */
+    height: 100%; /* Altura total da tela */
+    overflow: auto; /* Habilita rolagem se necessário */
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo preto semi-transparente */
+}
+
+.modal-content {
+    position: relative;
+    margin: 10% auto; /* Menor margem superior para que fique mais próximo do topo */
+    padding: 20px;
+    width: 90%; /* Aumenta a largura do modal para 90% da tela */
+    max-width: 700px; /* Aumenta a largura máxima para 700px */
+    max-height: 80%; /* Define uma altura máxima de 80% da tela */
+    overflow: auto; /* Adiciona rolagem se o conteúdo exceder a altura */
+    background-color: #fff; /* Fundo branco */
+    border-radius: 10px; /* Bordas arredondadas */
+    text-align: center; /* Centraliza o texto */
+}
+
+.close {
+    color: #aaa; /* Cor do 'x' de fechar */
+    float: right; /* Posiciona no canto direito */
+    font-size: 28px; /* Tamanho do 'x' */
+    font-weight: bold; /* Negrito */
+    cursor: pointer; /* Muda o cursor ao passar */
+}
+
+.close:hover,
+.close:focus {
+    color: black; /* Cor ao passar o mouse */
+    text-decoration: none; /* Remove o sublinhado */
+    cursor: pointer; /* Muda o cursor ao passar */
+}
+
+img {
+    max-width: 100%; /* Largura máxima da imagem */
+    height: auto; /* Altura automática para manter a proporção */
 }
