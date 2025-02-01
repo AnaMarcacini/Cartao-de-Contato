@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cartão de Contato Animado</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="card" id="contactCard">
         <div class="card-header">
             <h1>Ana Marcacini</h1>
-            <p>Pesquisadora da Divisão de Eletrônica e Telecomunicações
-                <br>Estudante de Engenharia da Computação
+            <p>Auxiliar do Curso de Engenharia da Computação do IMT
+                <br>Engenheira da Computação
             </p>
         </div>
         <div class="card-body" id="contactInformation">
             <p>
                 <i class="fas fa-phone"></i>
-                <a href="https://api.whatsapp.com/send?phone=+5511987507002&text=Ol%C3%A1%20Ana%2C%20recebi%20o%20seu%20curr%C3%ADculo%20e%20gostaria%20de%20te%20conhecer%20melhor%2C%20podemos%20conversar%3F">(11) 98750-7002</a>
+                <a
+                    href="https://api.whatsapp.com/send?phone=+5511987507002&text=Ol%C3%A1%20Ana%2C%20recebi%20o%20seu%20curr%C3%ADculo%20e%20gostaria%20de%20te%20conhecer%20melhor%2C%20podemos%20conversar%3F">(11)
+                    98750-7002</a>
             </p>
             <p>
                 <i class="fas fa-envelope"></i>
@@ -37,7 +41,7 @@
             </p>
         </div>
     </div>
-    
+
 
     <button id="downloadBtn" class="download-btn" onclick="downloadPDF()">
         <i class="fas fa-download"></i>
@@ -52,11 +56,12 @@
             <img id="qrCodeImage" src="" alt="QR Code" />
         </div>
     </div>
-    
+
     <!-- Bibliotecas de ícones e PDF -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
